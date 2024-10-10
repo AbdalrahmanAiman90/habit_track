@@ -88,4 +88,10 @@ class AuthOperation {
     }
     return 'null';
   }
+
+  Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
 }
+

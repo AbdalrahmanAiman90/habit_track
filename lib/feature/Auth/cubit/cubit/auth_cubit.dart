@@ -63,6 +63,16 @@ class AuthCubit extends Cubit<AuthState> {
       log('Error storing user data: $e');
     }
   }
+//logout
+  Future<void> logOut() async {
+    try {
+      await auth.signOut();
+      emit(AuthInitial()); // Emit an initial state or a logout success state
+    } catch (e) {
+      log('Error logging out: $e');
+      // You can emit a failure state if needed
+    }
+  }
 
   @override
   void onChange(Change<AuthState> change) {
@@ -70,4 +80,6 @@ class AuthCubit extends Cubit<AuthState> {
     log(change.toString());
     super.onChange(change);
   }
+
+  void updateAccount({required String name, required String email, required String password}) {}
 }

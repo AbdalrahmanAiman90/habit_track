@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habit_track/feature/Settings/screen/settting.dart';
 import 'package:habit_track/feature/calender/ui/screen/calender_screen.dart';
 import 'package:habit_track/feature/home/ui/screen/home_screen.dart';
 import 'package:habit_track/feature/timer/timer_screen.dart';
@@ -17,7 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar>
     const HomeScreen(), // Replace with HomeScreen()
     HabitCalendar(),
     TimerGoalScreen(),
-    const Center(child: Text("setting")),
+    SettingsScreen(),
   ];
 
   @override

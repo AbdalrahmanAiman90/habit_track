@@ -6,6 +6,7 @@ import 'package:habit_track/core/global/global_widget/app_stuts.dart';
 import 'package:habit_track/core/theme/screen_size.dart';
 import 'package:habit_track/core/theme/style.dart';
 import 'package:habit_track/feature/Auth/cubit/cubit/auth_cubit.dart';
+import 'package:habit_track/feature/Auth/ui/screen/register_screen.dart';
 
 import 'package:habit_track/feature/Auth/ui/widget/custom_button.dart';
 import 'package:habit_track/feature/Auth/ui/widget/custom_text.dart';
@@ -15,6 +16,8 @@ import 'package:habit_track/feature/Auth/ui/widget/remmber_me.dart';
 import 'package:habit_track/feature/home/ui/screen/home_screen.dart';
 import 'package:habit_track/feature/home/ui/screen/navbar.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+
+import '../../../../core/theme/color.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -83,6 +86,33 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Log In",
                         style: TextAppStyle.mainTittel,
                       ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const RegisterScreen(),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 30.h),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Sign Up",
+                                style: TextAppStyle.subTittel,
+                              ),
+                              AppScreenUtil.width(6),
+                              const Icon(
+                                Icons.arrow_forward_ios,
+                                color: AppColor.subText,
+                                size: 18,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
                     ],
                   ),
                   AppScreenUtil.hight(35),
@@ -114,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   AppScreenUtil.hight(40),
                   //!button
                   CustomButton(
-                    buttonName: 'Sign Up',
+                    buttonName: 'Login',
                     onPressed: _handleLogin,
                   ),
                   AppScreenUtil.hight(30),

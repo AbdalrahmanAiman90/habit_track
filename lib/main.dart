@@ -9,6 +9,7 @@ import 'package:habit_track/feature/home/cubit/goal_cubit/cubit/goal_cubit.dart'
 
 import 'package:habit_track/feature/home/ui/screen/navbar.dart';
 import 'package:habit_track/firebase_options.dart';
+import 'package:habit_track/splash_screen.dart';
 import 'package:hive/hive.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 
@@ -48,12 +49,13 @@ class MyApp extends StatelessWidget {
             ),
           ],
           child: MaterialApp(
-            theme: ThemeData(
-              scaffoldBackgroundColor: Colors.white.withOpacity(.988),
-            ),
-            home: BottomNavBar(),
-            // const RegisterScreen(),
-          ),
+              theme: ThemeData(
+                scaffoldBackgroundColor: Colors.white.withOpacity(.988),
+              ),
+              home: splashScreen()
+              // const RegisterScreen(),
+              ),
+
         ),
       ),
     );

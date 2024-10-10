@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:habit_track/core/global/global_widget/app_stuts.dart';
 import 'package:habit_track/core/theme/color.dart';
 import 'package:habit_track/core/theme/screen_size.dart';
@@ -80,7 +81,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               key: _formKey,
               child: Column(
                 children: [
-                  //!top page
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
